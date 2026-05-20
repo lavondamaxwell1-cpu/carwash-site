@@ -1,16 +1,17 @@
 import { useState } from "react";
 
 export default function BookingForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    vehicleType: "",
-    package: "",
-    date: "",
-    time: "",
-    message: "",
-  });
+ const [formData, setFormData] = useState({
+   name: "",
+   phone: "",
+   email: "",
+   vehicleType: "",
+   package: "",
+   date: "",
+   time: "",
+   message: "",
+   website: "",
+ });
 
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
@@ -45,17 +46,17 @@ export default function BookingForm() {
       }
 
       setSubmitted(true);
-
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        vehicleType: "",
-        package: "",
-        date: "",
-        time: "",
-        message: "",
-      });
+setFormData({
+  name: "",
+  phone: "",
+  email: "",
+  vehicleType: "",
+  package: "",
+  date: "",
+  time: "",
+  message: "",
+  website: "",
+});
     } catch (error) {
       console.error("Booking error:", error);
       alert("Sorry, your booking request could not be sent. Please try again.");
@@ -82,6 +83,15 @@ export default function BookingForm() {
         </div>
 
         <form onSubmit={handleSubmit} className="grid gap-4">
+          <input
+            type="text"
+            name="website"
+            value={formData.website}
+            onChange={handleChange}
+            tabIndex="-1"
+            autoComplete="off"
+            className="hidden"
+          />
           <input
             type="text"
             name="name"
