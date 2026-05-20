@@ -912,7 +912,7 @@ const handleSubmit = (e) => {
                 </h3>
 
                 <p className="mb-6 text-slate-600">
-                  Replace this section with the client’s real Google Map embed
+                  Replace this section with the real Google Map embed
                   when you have their address.
                 </p>
 
